@@ -1,69 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Robotics Countdown</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Robotics Meet Countdown</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h1>Countdown to Robotics Meet</h1>
-    <div id="countdown"></div>
-    <progress id="progress" value="0" max="100"></progress>
+  <div class="container">
+
+    <h1>🚀 Robotics Meet Countdown</h1>
     <button onclick="toggleTheme()">Toggle Theme</button>
-  </header>
 
-  <section id="unlockables"></section>
+    <div class="card" id="unlockables"></div>
 
-  <section id="team">
-    <h2>Team Dashboard</h2>
-    <div id="team-list"></div>
-    <div id="add-member">
-      <input type="text" id="name" placeholder="Name">
-      <input type="text" id="role" placeholder="Role">
-      <button onclick="addMember()">Add</button>
+    <h2>📸 Showcase</h2>
+    <div class="card">
+      <input type="file" id="media" />
+      <input type="text" id="desc" placeholder="Description"/>
+      <button onclick="uploadMedia()">Upload</button>
+      <div id="gallery"></div>
     </div>
-  </section>
 
-  <section id="showcase">
-    <h2>Project Showcase</h2>
-    <input type="file" id="media" accept="image/*,video/*">
-    <input type="text" id="desc" placeholder="Description">
-    <button onclick="uploadMedia()">Upload</button>
-    <div id="gallery"></div>
-  </section>
+    <h2>📅 Team Schedule</h2>
+    <div class="card">
+      <input type="text" id="task" placeholder="Task"/>
+      <input type="datetime-local" id="time"/>
+      <input type="text" id="status" placeholder="Status"/>
+      <button onclick="addAgenda()">Add</button>
+      <div id="agenda-list"></div>
+    </div>
 
-  <section id="schedule">
-    <h2>Schedule</h2>
-    <div id="agenda-list"></div>
-    <input type="text" id="task" placeholder="Task">
-    <input type="datetime-local" id="time">
-    <select id="status">
-      <option value="Planned">Planned</option>
-      <option value="Doing">Doing</option>
-      <option value="Done">Done</option>
-    </select>
-    <button onclick="addAgenda()">Add Task</button>
-  </section>
+    <h2>📝 Dev Blog</h2>
+    <div class="card">
+      <textarea id="blog-text" placeholder="Write an update..."></textarea>
+      <button onclick="addBlog()">Post</button>
+      <div id="blog-entries"></div>
+    </div>
 
-  <section id="blog">
-    <h2>Dev Blog</h2>
-    <div id="blog-entries"></div>
-    <textarea id="blog-text" placeholder="What's new?"></textarea>
-    <button onclick="addBlog()">Post</button>
-  </section>
+    <h2>💬 Team Chat</h2>
+    <div class="card">
+      <input type="text" id="nickname" placeholder="Your name"/>
+      <input type="text" id="message" placeholder="Your message"/>
+      <button onclick="sendMessage()">Send</button>
+      <div id="chat-box"></div>
+    </div>
 
-  <section id="chat">
-    <h2>Team Chat</h2>
-    <input type="text" id="nickname" placeholder="Nickname">
-    <input type="text" id="message" placeholder="Message">
-    <button onclick="sendMessage()">Send</button>
-    <div id="chat-box"></div>
-  </section>
+  </div>
 
-  <script type="module" src="script.js"></script>
   <script type="module" src="firebase.js"></script>
-  <script type="module" src="dashboard.js"></script>
   <script type="module" src="showcase.js"></script>
   <script type="module" src="schedule.js"></script>
   <script type="module" src="blog.js"></script>
