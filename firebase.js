@@ -1,18 +1,20 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"
-import { getDatabase, ref, onValue, set, push, remove } from "https://www.gstatic.com/firebasejs/10.11.0/firebase-database.js"
+import { initializeApp } from "firebase/app"
+import { getDatabase, ref, set, push, onValue } from "firebase/database"
+import { getAnalytics } from "firebase/analytics"
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBHFy0G4SzuSlHoHcHBNvP9j671V76SAJo",
-  authDomain: "websiter-fa434.firebaseapp.com",
-  databaseURL: "https://websiter-fa434-default-rtdb.firebaseio.com",
-  projectId: "websiter-fa434",
-  storageBucket: "websiter-fa434.appspot.com",
-  messagingSenderId: "220814812327",
-  appId: "1:220814812327:web:5203ba48accc92a273a782",
-  measurementId: "G-NNHK9WGV8H"
+  apiKey: "AIzaSyByrmvkZxn4TV75Yk4cVdgRe5aXNpgUlUI",
+  authDomain: "roboticswebsite.firebaseapp.com",
+  databaseURL: "https://roboticswebsite-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "roboticswebsite",
+  storageBucket: "roboticswebsite.appspot.com",
+  messagingSenderId: "744993199417",
+  appId: "1:744993199417:web:e28dfa13ba114f9973c4e8",
+  measurementId: "G-QBJL52KDRT"
 }
 
 const app = initializeApp(firebaseConfig)
+const analytics = getAnalytics(app)
 const db = getDatabase(app)
 
-export { db, ref, onValue, set, push, remove }
+export { db, ref, set, push, onValue }
